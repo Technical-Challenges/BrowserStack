@@ -1,35 +1,29 @@
-# PyTest with Browserstack
+# BrowserStack Technical Challenge
 
-PyTest Integration with BrowserStack using SDK.
+## Tech Challenge
 
-![BrowserStack Logo](https://d98b8t1nnulk5.cloudfront.net/production/images/layout/logo-header.png?1469004780)
-## Prerequisite
-* Python3
+The challenge involved creating a test suite that executes the following actions on BrowserStack:
 
-## Setup
+1. Write a small Selenium test suite that meets the following criteria:
 
-* Clone the repo with `git clone -b sdk https://github.com/browserstack/pytest-browserstack.git`
-* It is recommended to use a virtual environment to install dependencies. To create a virtual environment:
-  ```
-  python3 -m venv env
-  source env/bin/activate # on Mac
-  env\Scripts\activate # on Windows
-  ```
-* Install dependencies `pip install -r requirements.txt`
-* To run your automated tests using BrowserStack, you must provide a valid username and access key. This can be done either by providing your username and access key in the `browserstack.yml` configuration file, or by setting the `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` environment variables.
+    a. Can be written in any language or framework
 
-## Run sample test in parallel:
-* To run the sample test across platforms defined in the configuration file run:
-```
-  browserstack-sdk pytest -s tests/bstack-sample-test.py
-```
+    b. Executes on BrowserStack (you will need to create a free trial)
 
-## Run a sample local test:
-* To run the sample local test across platforms defined in the configuration file, you just need to set `browserstackLocal` key as true in the `browserstack.yml` file and run:
-```
-  browserstack-sdk pytest -s tests/bstack-local-test.py
-```
+    c. The suite must contain a test doing the following:
 
-## Notes
-* You can view your test results on the [BrowserStack Automate dashboard](https://www.browserstack.com/automate)
-* To test on a different set of browsers, check out our [platform configurator](https://www.browserstack.com/automate/python#setting-os-and-browser)
+        i. Log into www.browserstack.com using your trial credentials
+        ii. Assert that the homepage includes a link to Invite Users and retrieve the link’s URL
+        iii. Logs out of BrowserStack
+
+    d. Run across the following three browsers in parallel:
+
+      - Windows 10 Chrome
+      - macOS Ventura Firefox
+      - Samsung Galaxy S22
+
+> **Note:** Sensitive data should not be hardcoded and can be referenced as a variable
+
+2. Execute the test suite from a Jenkins server
+
+3. When complete, please share the suite as a Github repo and provide evidence of your Jenkins job -- either the pipeline code or screenshots of the build configuration.
