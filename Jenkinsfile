@@ -2,15 +2,15 @@ pipeline {
    agent any
    stages {
       stage('Prepare Environment') {
-            steps {
-                script {
-                  bat "python -m venv venv"
-                  bat "venv\\Scripts\\activate"
-                  bat "pip install --upgrade pip"
-                  bat "pip install -r requirements.txt"
-                  echo 'Setting up a clean virtual environment'
-                }
+         steps {
+            script {
+               echo 'Setting up a clean virtual environment'
+               bat "python -m venv venv"
+               bat "venv\\Scripts\\activate"
+               bat "pip install --upgrade pip"
+               bat "pip install -r requirements.txt"
             }
+         }
       }
 
       stage('Run Test') {
@@ -23,19 +23,18 @@ pipeline {
             }
          }
       }
-    }
+   }
+    
     post {
-        always {
-            echo 'Cleaning up environment'
-            // Clean up the workspace to ensure no data persists between builds
-            cleanWs()
-        }
-        success {
-            echo 'Tests completed successfully.'
-        }
-        failure {
-            echo 'Tests failed. Check the logs for details.'
-            // Additional commands can be added here to handle failures, like sending notifications
-        }
-    }
-  }
+      always {
+         echo 'Cleaning up environment'
+         cleanWs()
+      }
+      success {
+         echo 'Tests completed successfully.'
+      }
+      failure {
+         echo 'Tests failed. Check the logs for details.'
+      }
+   }
+}
