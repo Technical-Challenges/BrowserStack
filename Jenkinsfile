@@ -4,7 +4,7 @@ pipeline {
       stage('Prepare Environment') {
          steps {
             script {
-               echo 'Setting up a clean virtual environment'
+               echo 'Setting up the virtual environment'
                bat "python -m venv venv"
                bat "venv\\Scripts\\activate"
                bat "pip install --upgrade pip"
