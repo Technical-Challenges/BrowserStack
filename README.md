@@ -32,3 +32,10 @@ The challenge involved creating a test suite that executes the following actions
 3. When complete, please share the suite as a Github repo and provide evidence of your Jenkins job -- either the pipeline code or screenshots of the build configuration.
 
     > **Evidence of Jenkins job:** Jenkinsfile
+
+## Images
+Jenkins
+    ![Jenkins](images\Jenkins.png "Jenkins")
+
+BrowserStack
+    ![Jenkins](images\BrowserStack.png "Jenkins")
