@@ -23,19 +23,17 @@ The challenge involved creating a test suite that executes the following actions
       - macOS Ventura Firefox
       - Samsung Galaxy S22
 
-    ***Note:** Sensitive data should not be hardcoded and can be referenced as a variable*
-
-    > **Test:** tests\test_browserstack.py
+    **Test:** tests\test_browserstack.py
 
 2. Execute the test suite from a Jenkins server
 
 3. When complete, please share the suite as a Github repo and provide evidence of your Jenkins job -- either the pipeline code or screenshots of the build configuration.
 
-    > **Evidence of Jenkins job:** Jenkinsfile
+      **Evidence of Jenkins job:** Jenkinsfile
 
 ## Images
 Jenkins
-    ![Jenkins](images\Jenkins.png "Jenkins")
+    ![Jenkins](images/Jenkins.png "Jenkins")
 
 BrowserStack
-    ![Jenkins](images\BrowserStack.png "Jenkins")
+    ![Jenkins](images/BrowserStack.png "Jenkins")
